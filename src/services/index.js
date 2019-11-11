@@ -24,18 +24,18 @@ class ProductService {
     }
   }
 
-  async updateProductById({ id, ...data }) {
+  async updateProductById({ productId, ...data }) {
     try {
-      const id = await this.mongodb.update(this.collection, id, data);
+      const id = await this.mongodb.update(this.collection, productId, data);
       return id;
     } catch (error) {
       throw new Error(error);
     }
   }
 
-  async deleteProductById(id) {
+  async deleteProductById(productId) {
     try {
-      const id = await this.mongodb.delete(this.collection, id);
+      const id = await this.mongodb.delete(this.collection, productId);
       return id;
     } catch (error) {
       throw new Error(error);
